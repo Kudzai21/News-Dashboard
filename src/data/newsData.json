@@ -1,0 +1,77 @@
+{
+  "banner": {
+    "message": "✨ Get unlimited access to the best of Medium for less than $1/week.",
+    "cta": "Subscribe now"
+  },
+  "categories": [
+    "Business",
+    "Entertainment",
+    "Health",
+    "Science",
+    "Sports",
+    "Technology"
+    
+  ],
+  "exploreChannel": {
+    "title": "Michelin-Starred Chef Unveils New Masterpiece Dish",
+    "image": "https://source.unsplash.com/800x450/?chef",
+    "cta": "Read More"
+  },
+  "headline": {
+    "title": "Collaborative Efforts and Diplomacy Updates",
+    "description": "Governments discuss new policies to improve global relations.",
+    "image": "https://source.unsplash.com/800x450/?politics",
+    "category": "Governance",
+    "date": "Yesterday, 4 Jan 2024",
+    "readTime": "5 min read"
+  },
+  "sections": [
+    {
+      "title": "Travel News",
+      "articles": [
+        {
+          "title": "What's Hot and What's Not in the Culinary World",
+          "description": "A look at the latest trends in the food industry.",
+          "image": "https://source.unsplash.com/100x100/?food",
+          "date": "Yesterday, 4 Jan 2024",
+          "readTime": "4 min read",
+          "category": "Foodie Highlights"
+        },
+        {
+          "title": "Michelin-Starred Chef Unveils New Masterpiece Dish",
+          "description": "A chef's latest creation is making waves in the culinary world.",
+          "image": "https://source.unsplash.com/100x100/?chef",
+          "date": "Yesterday, 4 Jan 2024",
+          "readTime": "5 min read",
+          "category": "Foodie Highlights"
+        }
+      ]
+    },
+    {
+      "title": "Video",
+      "articles": [
+        {
+          "title": "The Impact of Climate Change on Wildlife",
+          "description": "A deep dive into how climate change is affecting animal habitats.",
+          "image": "https://source.unsplash.com/100x100/?nature",
+          "date": "Yesterday, 4 Jan 2024",
+          "readTime": "6 min read",
+          "category": "Environment"
+        }
+      ]
+    },
+    {
+      "title": "Education Insights",
+      "articles": [
+        {
+          "title": "Adapting Education for a Changing World",
+          "description": "Innovative learning methods for the next generation.",
+          "image": "https://source.unsplash.com/100x100/?education",
+          "date": "Yesterday, 4 Jan 2024",
+          "readTime": "5 min read",
+          "category": "Education Insights"
+        }
+      ]
+    }
+  ]
+}
