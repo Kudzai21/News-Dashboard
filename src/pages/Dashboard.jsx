@@ -7,7 +7,7 @@ import NewsDashboard from "../components/NewsDashboard";
 const Dashboard = () => {
   return (
     <div className="flex flex-col">
-      <Banner message="Latest News" cta="Read More" />
+      <Banner message="✨ Get unlimited access to the best of Medium for less than $1/week." cta="Subscribe" />
       <Navbar />
       <div className="flex flex-grow pt-16">
         <Sidebar />
