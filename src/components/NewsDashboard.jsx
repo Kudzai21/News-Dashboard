@@ -153,7 +153,7 @@ const NewsDashboard = () => {
               <div className="flex flex-row gap-2 p-2">
                 <img
                   src={article.urlToImage}
-                  alt={article.title}
+                  //alt={article.title}
                   className="w-auto h-28 object-cover rounded"
                 />
                 <div>
