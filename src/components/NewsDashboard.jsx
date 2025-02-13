@@ -66,7 +66,7 @@ const NewsDashboard = () => {
 
   return (
     <div className="container mx-auto px-4 py-28">
-      {/* Explore Channel Section */}
+      {/* Breaking News Section */}
       <section className="mb-8 w-full">
         <h2 className="text-2xl font-bold mb-4">Breaking News</h2>
         <a href={entertainmentHeadline.url} target="_blank" rel="noopener noreferrer">
@@ -78,19 +78,19 @@ const NewsDashboard = () => {
               backgroundPosition: 'center',
             }}
           >
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
-              <h3 className="text-xl font-bold text-white">{entertainmentHeadline.title}</h3>
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center p-4">
+              <h3 className="text-xl font-bold text-white pb-2">{entertainmentHeadline.title}</h3>
               <p className="text-gray-200">{entertainmentHeadline.description}</p>
             </div>
           </div>
         </a>
       </section>
 
-      {/* Sports Headline */}
+      {/* Sports Hightlights & Business Insights Section*/}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        {/* Sports Headline Section */}
+      {/* Sports Hightlights  Section*/}
         <section className="overflow-hidden">
-          <h2 className="text-2xl font-bold mb-4 py-4">Sports News</h2>
+          <h2 className="text-2xl font-bold mb-4 py-4">Sports Buzz</h2>
           <a href={sportsHeadline.url} target="_blank" rel="noopener noreferrer">
             <div
               className="relative h-96 w-auto"
@@ -101,7 +101,7 @@ const NewsDashboard = () => {
               }}
             >
               <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
-                <h3 className="font-bold text-lg text-white">{sportsHeadline.title}</h3>
+                <h3 className="font-bold text-lg text-white pb-2">{sportsHeadline.title}</h3>
                 <p className="text-gray-200 text-sm">{sportsHeadline.description}</p>
                 <span className="text-xs text-gray-300">
                   {sportsHeadline.publishedAt}
@@ -111,9 +111,9 @@ const NewsDashboard = () => {
           </a>
         </section>
 
-        {/* Business News Section */}
+        {/* Business Insights Section */}
         <section>
-          <h2 className="text-2xl font-bold mb-4 py-4">Business News</h2>
+          <h2 className="text-2xl font-bold mb-4 py-4">Business Insights</h2>
           {filteredSections.map((section, index) => (
             <div key={index} className="mb-4">
               {section.title === "Business News" && (
@@ -122,7 +122,7 @@ const NewsDashboard = () => {
                     <a key={idx} href={article.url} target="_blank" rel="noopener noreferrer">
                       <div className="flex flex-row gap-2 p-2">
                         <div>
-                          <h3 className="font-bold text-lg">{article.title}</h3>
+                          <h3 className="font-bold text-lg pb-2">{article.title}</h3>
                           <p className="text-gray-600 text-sm">{article.description}</p>
                           <span className="text-xs text-gray-500">
                             {article.publishedAt}
@@ -143,11 +143,11 @@ const NewsDashboard = () => {
         </section>
       </div>
 
-      {/* Technology and Education Sections */}
+      {/* Technology and Science Sections */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Technology Section */}
+        {/* Technology Trends Section */}
         <section className="px-4">
-          <h2 className="text-2xl font-bold mb-4">Technology News</h2>
+          <h2 className="text-2xl font-bold mb-4">Technology Trends</h2>
           {technologyArticles.map((article, idx) => (
             <a key={idx} href={article.url} target="_blank" rel="noopener noreferrer">
               <div className="flex flex-row gap-2 p-2">
@@ -157,7 +157,7 @@ const NewsDashboard = () => {
                   className="w-auto h-28 object-cover rounded"
                 />
                 <div>
-                  <h3 className="font-bold text-lg">{article.title}</h3>
+                  <h3 className="font-bold text-lg pb-2">{article.title}</h3>
                   <p className="text-gray-600 text-sm">{article.description}</p>
                   <span className="text-xs text-gray-500">
                     {article.publishedAt}
@@ -168,9 +168,9 @@ const NewsDashboard = () => {
           ))}
         </section>
 
-        {/* Science Section */}
+        {/* Science Discovery Section */}
         <section className="px-4">
-          <h2 className="text-2xl font-bold mb-4">Science News</h2>
+          <h2 className="text-2xl font-bold mb-4">Science Discovery</h2>
           {scienceArticles.map((article, idx) => (
             <a key={idx} href={article.url} target="_blank" rel="noopener noreferrer">
               <div className="flex flex-row gap-2 p-2">
@@ -180,7 +180,7 @@ const NewsDashboard = () => {
                   className="w-auto h-28 object-cover rounded"
                 />
                 <div>
-                  <h3 className="font-bold text-lg">{article.title}</h3>
+                  <h3 className="font-bold text-lg pb-2">{article.title}</h3>
                   <p className="text-gray-600 text-sm">{article.description}</p>
                   <span className="text-xs text-gray-500">
                     {article.publishedAt}

@@ -5,8 +5,8 @@ const Sidebar = ({ onFilter }) => {
     "Business Insights",
     "Entertainment Buzz",
     "Health Care Focus",
-    "Science Insights",
-    "Sports Highlights",
+    "Science Discovery",
+    "Sports Buzz",
     "Technology Trends",
   ];
 
