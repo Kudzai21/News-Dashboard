@@ -8,6 +8,7 @@ const NewsDashboard = () => {
   const [businessArticles, setBusinessArticles] = useState([]);
   const [technologyArticles, setTechnologyArticles] = useState([]);
   const [filteredSections, setFilteredSections] = useState([]);
+  const [scienceArticles, setScienceArticles] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,15 +38,23 @@ const NewsDashboard = () => {
         const technologyResponse = await fetch(`https://newsapi.org/v2/top-headlines?category=technology&country=us&apiKey=${API_KEY}`);
         const technologyData = await technologyResponse.json();
         if (technologyData.articles) {
-          setTechnologyArticles(technologyData.articles.slice(0, 1)); // Set technology articles
+          setTechnologyArticles(technologyData.articles.slice(0, 2)); // Set technology articles
         }
+
+         // Fetch Technology Articles
+         const scienceResponse = await fetch(`https://newsapi.org/v2/top-headlines?category=science&country=us&apiKey=${API_KEY}`);
+         const scienceData = await scienceResponse.json();
+         if (scienceData.articles) {
+           setScienceArticles(scienceData.articles.slice(0, 2)); // Set technology articles
+         }
 
         // Set filtered sections
         setFilteredSections([
           { title: "Business News", articles: businessData.articles.slice(0, 3) },
           { title: "Entertainment News", articles: [entertainmentData.articles[0]] },
           { title: "Sports News", articles: [sportsData.articles[0]] },
-          { title: "Technology News", articles: technologyData.articles.slice(0, 1) },
+          { title: "Technology News", articles: technologyData.articles.slice(0, 2) },
+          { title: "Science News", articles: scienceData.articles.slice(0, 2) },
         ]);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -59,10 +68,10 @@ const NewsDashboard = () => {
     <div className="container mx-auto px-4 py-28">
       {/* Explore Channel Section */}
       <section className="mb-8 w-full">
-        <h2 className="text-2xl font-bold mb-4">Explore Channel</h2>
+        <h2 className="text-2xl font-bold mb-4">Breaking News</h2>
         <a href={entertainmentHeadline.url} target="_blank" rel="noopener noreferrer">
           <div
-            className="relative rounded-lg overflow-hidden h-28"
+            className="relative rounded overflow-hidden h-36"
             style={{
               backgroundImage: `url(${entertainmentHeadline.urlToImage})`,
               backgroundSize: 'cover',
@@ -81,7 +90,7 @@ const NewsDashboard = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         {/* Sports Headline Section */}
         <section className="overflow-hidden">
-          <h2 className="text-2xl font-bold mb-4 p-4">Sports News</h2>
+          <h2 className="text-2xl font-bold mb-4 py-4">Sports News</h2>
           <a href={sportsHeadline.url} target="_blank" rel="noopener noreferrer">
             <div
               className="relative h-96 w-auto"
@@ -103,8 +112,8 @@ const NewsDashboard = () => {
         </section>
 
         {/* Business News Section */}
-        <section className="p-4">
-          <h2 className="text-2xl font-bold mb-4">Business News</h2>
+        <section>
+          <h2 className="text-2xl font-bold mb-4 py-4">Business News</h2>
           {filteredSections.map((section, index) => (
             <div key={index} className="mb-4">
               {section.title === "Business News" && (
@@ -122,7 +131,7 @@ const NewsDashboard = () => {
                         <img
                           src={article.urlToImage}
                           //alt={article.title}
-                          className="w-28 h-auto object-cover rounded-md"
+                          className="w-28 h-auto object-cover rounded"
                         />
                       </div>
                     </a>
@@ -135,15 +144,9 @@ const NewsDashboard = () => {
       </div>
 
       {/* Technology and Education Sections */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        {/* Video Section */}
-        <section className="w-full p-4">
-          <h2 className="text-2xl font-bold mb-4">Video</h2>
-          <div className="h-32 bg-gray-300 rounded-md">Video Content</div>
-        </section>
-
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Technology Section */}
-        <section className="p-4">
+        <section className="px-4">
           <h2 className="text-2xl font-bold mb-4">Technology News</h2>
           {technologyArticles.map((article, idx) => (
             <a key={idx} href={article.url} target="_blank" rel="noopener noreferrer">
@@ -151,7 +154,30 @@ const NewsDashboard = () => {
                 <img
                   src={article.urlToImage}
                   alt={article.title}
-                  className="w-auto h-28 object-cover rounded-md"
+                  className="w-auto h-28 object-cover rounded"
+                />
+                <div>
+                  <h3 className="font-bold text-lg">{article.title}</h3>
+                  <p className="text-gray-600 text-sm">{article.description}</p>
+                  <span className="text-xs text-gray-500">
+                    {article.publishedAt}
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </section>
+
+        {/* Science Section */}
+        <section className="px-4">
+          <h2 className="text-2xl font-bold mb-4">Science News</h2>
+          {scienceArticles.map((article, idx) => (
+            <a key={idx} href={article.url} target="_blank" rel="noopener noreferrer">
+              <div className="flex flex-row gap-2 p-2">
+                <img
+                  src={article.urlToImage}
+                 //alt={article.title}
+                  className="w-auto h-28 object-cover rounded"
                 />
                 <div>
                   <h3 className="font-bold text-lg">{article.title}</h3>

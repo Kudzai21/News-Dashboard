@@ -12,7 +12,7 @@ const Sidebar = ({ onFilter }) => {
 
   return (
     <div className="fixed top-16 left-0 h-[calc(100vh-4rem)] w-64 shadow-md px-4 pt-28 overflow-y-auto z-10">
-      <h2 className="text-lg font-semibold mb-4">Categories</h2>
+      <h2 className="text-2xl font-bold mb-4">Categories</h2>
       <ul>
         {categories.map((category) => (
           <li
