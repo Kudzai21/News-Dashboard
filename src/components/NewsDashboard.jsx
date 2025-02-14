@@ -113,7 +113,7 @@ const NewsDashboard = () => {
 
         {/* Business Insights Section */}
         <section>
-          <h2 className="text-2xl font-bold mb-4 py-4">Business Insights</h2>
+          <h2 className="text-2xl font-bold mb-4">Business Insights</h2>
           {filteredSections.map((section, index) => (
             <div key={index} className="mb-4">
               {section.title === "Business News" && (
