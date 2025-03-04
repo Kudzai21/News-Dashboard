@@ -90,10 +90,10 @@ const NewsDashboard = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
       {/* Sports Hightlights  Section*/}
         <section className="overflow-hidden">
-          <h2 className="text-2xl font-bold mb-4 py-4">Sports Buzz</h2>
+          <h2 className="text-2xl font-bold mb-4 pb-4">Sports Buzz</h2>
           <a href={sportsHeadline.url} target="_blank" rel="noopener noreferrer">
             <div
-              className="relative h-96 w-auto"
+              className="relative h-96 w-auto rounded"
               style={{
                 backgroundImage: `url(${sportsHeadline.urlToImage})`,
                 backgroundSize: 'cover',
@@ -113,14 +113,14 @@ const NewsDashboard = () => {
 
         {/* Business Insights Section */}
         <section>
-          <h2 className="text-2xl font-bold mb-4">Business Insights</h2>
+          <h2 className="text-2xl font-bold mb-4 pb-2">Business Insights</h2>
           {filteredSections.map((section, index) => (
             <div key={index} className="mb-4">
               {section.title === "Business News" && (
                 <div className="grid grid-cols-1 gap-4">
                   {section.articles.map((article, idx) => (
                     <a key={idx} href={article.url} target="_blank" rel="noopener noreferrer">
-                      <div className="flex flex-row gap-2 p-2">
+                      <div className="flex flex-row gap-2 ">
                         <div>
                           <h3 className="font-bold text-lg pb-2">{article.title}</h3>
                           <p className="text-gray-600 text-sm">{article.description}</p>
@@ -131,7 +131,7 @@ const NewsDashboard = () => {
                         <img
                           src={article.urlToImage}
                           //alt={article.title}
-                          className="w-28 h-auto object-cover rounded"
+                          className="w-44 h-28 object-cover rounded"
                         />
                       </div>
                     </a>
@@ -147,14 +147,14 @@ const NewsDashboard = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Technology Trends Section */}
         <section className="px-4">
-          <h2 className="text-2xl font-bold mb-4">Technology Trends</h2>
+          <h2 className="text-2xl font-bold mb-4 pb-2">Technology Trends</h2>
           {technologyArticles.map((article, idx) => (
             <a key={idx} href={article.url} target="_blank" rel="noopener noreferrer">
               <div className="flex flex-row gap-2 p-2">
                 <img
                   src={article.urlToImage}
                   //alt={article.title}
-                  className="w-auto h-28 object-cover rounded"
+                  className="w-36 h-28 object-cover rounded"
                 />
                 <div>
                   <h3 className="font-bold text-lg pb-2">{article.title}</h3>
@@ -170,14 +170,14 @@ const NewsDashboard = () => {
 
         {/* Science Discovery Section */}
         <section className="px-4">
-          <h2 className="text-2xl font-bold mb-4">Science Discovery</h2>
+          <h2 className="text-2xl font-bold mb-4 pb-2">Science Discovery</h2>
           {scienceArticles.map((article, idx) => (
             <a key={idx} href={article.url} target="_blank" rel="noopener noreferrer">
               <div className="flex flex-row gap-2 p-2">
                 <img
                   src={article.urlToImage}
                  //alt={article.title}
-                  className="w-auto h-28 object-cover rounded"
+                  className="w-36 h-28 object-cover rounded"
                 />
                 <div>
                   <h3 className="font-bold text-lg pb-2">{article.title}</h3>
