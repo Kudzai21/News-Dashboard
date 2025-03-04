@@ -137,7 +137,7 @@ const NewsDashboard = () => {
                     </a>
                   ))}
                 </div>
-              )}
+              )} 
             </div>
           ))}
         </section>
